@@ -30,5 +30,16 @@ Route::middleware(["auth"])->group(function() {
 
 
 Route::get("test_mail", [\App\Http\Controllers\MailController::class, 'sendEmailTest']);
+Route::get('/add-blog', function () {
+    return view('dashboard.add-blog');
+})->middleware(['auth']);
+
+Route::get('/edit-blog', function () {
+    return view('dashboard.edit-blog');
+})->middleware(['auth']);
+
+Route::get('/blog-details', function () {
+    return view('dashboard.blog-details');
+})->middleware(['auth']);
 
 require __DIR__.'/auth.php';
