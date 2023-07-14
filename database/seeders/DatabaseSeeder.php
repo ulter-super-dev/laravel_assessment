@@ -20,5 +20,19 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        \App\Models\BlogCategory::factory()->create([
+                'category' => 'Software',
+                'description' => 'Software topic',
+            ]
+        );
+
+        
+        \App\Models\BlogCategory::factory()->create([
+            'category' => 'Hardware',
+            'description' => 'Hardware topic',
+        ]
+    );
+
     }
 }

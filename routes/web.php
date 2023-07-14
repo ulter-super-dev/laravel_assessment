@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controller\BlogController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +22,13 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+
+Route::middleware(["auth"])->group(function() {
+    Route::resource('blogs', BlogController::class);
+});
+
+
+Route::get("test_mail", [\App\Http\Controllers\MailController::class, 'sendEmailTest']);
 
 require __DIR__.'/auth.php';
