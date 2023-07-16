@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## Patrick's skill assessment for full stack developer position
+## Patrick Clifford's skill assessment for a full stack developer position
 
 I have buite simple CRUD logics through tiny blog system using Laravel 9.
 Here are items which I implemented.
@@ -17,5 +17,3 @@ Here are items which I implemented.
 - Created and updated blog logic including sever and clint validation using laravel validation module and javascript.
 - Created user table which has serveral functions including sorting, pagination, searching.
 - Implemented sending a transactional email after posting email using smtp gmail server.
-
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
