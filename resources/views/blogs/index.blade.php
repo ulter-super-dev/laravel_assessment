@@ -3,34 +3,33 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Blog Page') }}
         </h2>
+
+        <head>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        </head>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg py-8">
                 <div class="flex justify-between">
                     <div class="flex justify-end m-5">
                         <form action="/blogs" method="GET">
-                            <input type="text" placeholder="Search title" name="q" value="{{ $q }}"
-                                class="px-4 py-2 border border-gray-300 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
-                            <button type="submit"
-                                class="px-4 py-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                Search
-                            </button>
+                            <input type="text" placeholder="Search Title" name="q" value="{{ $q }}" class="custom-input" />
+                            &nbsp;&nbsp;
+                            <button type="submit" class="custom-btn">Search</button>
                         </form>
                     </div>
                     <div class="flex justify-end m-5">
-                        <a href="/blogs/create"
-                            class="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                            Post Blog
-                        </a>
+                        <a href="/blogs/create" class="custom-btn">Post Blog</a>
                     </div>
                 </div>
+                
                 <div class="flex flex-col">
                     <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                            <div class="overflow-hidden">
-                                <table class="min-w-full divide-y divide-gray-200 mx-5">
+                            <div class="p-4 overflow-hidden">
+                                <table class="min-w-full divide-y divide-gray-200">
                                     <thead>
                                         <tr>
                                             <th
@@ -134,24 +133,13 @@
                                                     <form action="/blogs/{{$blog->id}}" method="POST" class="">
                                                         @csrf
                                                         {{ method_field('DELETE') }}
-                                                        <button type="submit"
-                                                            class="p-1 rounded-full bg-red-500 hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">
-                                                            <svg class="w-4 h-4 text-white" fill="currentColor"
-                                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                                <path fill-rule="evenodd"
-                                                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.707 5.293a1 1 0 111.414-1.414L10 8.586l2.879-2.879a1 1 0 111.414 1.414L11.414 10l2.879 2.879a1 1 0 11-1.414 1.414L10 11.414l-2.879 2.879a1 1 0 11-1.414-1.414L8.586 10 5.707 7.121a1 1 0 011.414-1.414L10 8.586z"
-                                                                    clip-rule="evenodd"></path>
-                                                            </svg>
+                                                        <button type="submit" class="action-btn">
+                                                            <span class="material-symbols-outlined">delete</span>
                                                         </button>
                                                     </form>
-                                                    <a href="/blogs/{{ $blog->id }}/edit"
-                                                        class="p-1 rounded-full bg-blue-500 hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-                                                        <svg class="w-4 h-4 text-white" fill="currentColor"
-                                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                            <path fill-rule="evenodd"
-                                                                d="M2.414 17.414a1 1 0 001.414 0L17 4.828V3a1 1 0 00-1-1H15a1 1 0 00-1 1v1H4a1 1 0 00-1 1v9a1 1 0 001 1h9v1a1 1 0 01-1 1H5a1 1 0 01-1-1v-6a1 1 0 00-1-1H2.586a1 1 0 000 2H4v3a1 1 0 01-1 1H2.414a1 1 0 01-.707-1.707L5.586 12 2.707 9.121a1 1 0 010-1.414z"
-                                                                clip-rule="evenodd"></path>
-                                                        </svg>
+                                                    
+                                                    <a href="/blogs/{{ $blog->id }}/edit" class="action-btn">
+                                                        <span class="material-symbols-outlined">ink_pen</span>
                                                     </a>
                                                 </div>
                                             </td>
@@ -166,7 +154,6 @@
                                     </tbody>
                                 </table>
                                 {!! $blogs->render() !!}
-
                             </div>
                         </div>
                     </div>

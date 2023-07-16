@@ -20,7 +20,7 @@ class BlogFactory extends Factory
             'title' => Str::random(9),
             'content' => Str::random(99),
             'keyword' => Str::random(10),
-            'category_id' => 7,
+            'category_id' => 1,
             'author_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
