@@ -6,9 +6,11 @@ use Illuminate\Http\Request;
 use App\Models\BlogCategory;
 use Validator;
 use Auth;
+use Mail;
 
 use App\Models\Blog;
 
+use App\Mail\BlogPostedMail;
 
 class BlogController extends Controller
 {
@@ -98,6 +100,9 @@ class BlogController extends Controller
             $new_blog->category_id = $request->category_id;
             $new_blog->author_id = $author->id;
             $new_blog->save();
+
+            $email = $author->email;
+            Mail::to($email)->send(new BlogPostedMail());
 
             // flash()->success('The blog has been posted successfully.');
             return redirect()->route('blogs.index');  
