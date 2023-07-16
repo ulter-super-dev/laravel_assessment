@@ -14,6 +14,6 @@ Here are items which I implemented.
 
 - Design and migrate datatable and seed data using laravel migration. (users, blogs, blog_categories).
 - Implemented authenticating logic using Breeze composer module.
-- Created and updated blog logic including sever and clint validation using laravel validation module and javascript.
-- Created user table which has serveral functions including sorting, pagination, searching.
+- Implemented creating, updating and deleting blog logics including sever and clint validation using laravel validation module and javascript.
+- Displayed blog list table which has serveral functions including sorting, pagination, searching.
 - Implemented sending a transactional email after posting email using smtp gmail server.
