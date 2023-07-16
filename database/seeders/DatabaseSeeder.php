@@ -16,23 +16,21 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
-
-        \App\Models\BlogCategory::factory()->create([
-                'category' => 'Software',
-                'description' => 'Software topic',
-            ]
-        );
+        // \App\Models\BlogCategory::factory()->create([
+        //         'category' => 'Software',
+        //         'description' => 'Software topic',
+        //     ]
+        // );
 
         
-        \App\Models\BlogCategory::factory()->create([
-            'category' => 'Hardware',
-            'description' => 'Hardware topic',
-        ]
-    );
+        // \App\Models\BlogCategory::factory()->create([
+        //     'category' => 'Hardware',
+        //     'description' => 'Hardware topic',
+        // ]);
+    
+
+        \App\Models\Blog::factory(100)->create();
+
 
     }
 }

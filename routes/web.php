@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controller\BlogController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +20,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+    return redirect('/blogs');
+});
 
 Route::middleware(["auth"])->group(function() {
     Route::resource('blogs', BlogController::class);
+    Route::post("blogs/search", [BlogController::class, 'searchBlog']);
 });
 
 

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->text('title');
             $table->text('content');
-            $table->string('keyword', 100);
+            $table->string('keyword', 100)->nullabe();
             $table->foreignId('author_id')->references('id')->on('users');;
             $table->foreignId('category_id')->references('id')->on('blog_categories');;
             $table->timestamps();
