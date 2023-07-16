@@ -50,8 +50,8 @@
                     <div class="mb-4">
                         <button type="submit" class="custom-btn">Submit</button>
                         &nbsp;
-                        <a href="{{ route('blogs.index') }}">
-                            <button class="custom-btn">Cancel</button>
+                        <a href="{{ route('blogs.index') }}" class="btn custom-btn">
+                            Cancel
                         </a>
                     </div>
                 </form>
